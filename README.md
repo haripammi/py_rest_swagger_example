@@ -9,3 +9,7 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
+
+```bash
+docker build --no-cache -t py-rest-swagger-example:latest .
+docker run -p 8000:8000 -v $(pwd)/data:/app/data py-rest-swagger-example:latest
