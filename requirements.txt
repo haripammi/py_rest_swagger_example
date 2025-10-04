@@ -2,5 +2,6 @@ fastapi
 uvicorn[standard]
 sqlalchemy
 databases
-aiosqlite
 pydantic
+aiomysql
+PyMySQL

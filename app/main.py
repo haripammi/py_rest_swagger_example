@@ -4,8 +4,9 @@ from typing import List
 import databases
 import sqlalchemy
 
-# SQLite database
-DATABASE_URL = "sqlite:///./data/items.db"
+# MySQL database
+# please update with your credentials
+DATABASE_URL = "mysql+aiomysql://user:password@host/db"
 database = databases.Database(DATABASE_URL)
 metadata = sqlalchemy.MetaData()
 
@@ -20,7 +21,7 @@ items_table = sqlalchemy.Table(
 
 # SQLAlchemy engine
 engine = sqlalchemy.create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
+    DATABASE_URL
 )
 metadata.create_all(engine)
 
